@@ -11,7 +11,7 @@ window=48; %one year
 ref_x = data(:,[(48*7+1):(48*11)]); 
 %Ref 1987.1.7-1990.12.28
 q=200;
-quantile_num =  [0.95,0.98,0.99,1];
+quantile_num =  [0.95,0.96,0.97,0.98,0.99,1]; %we recommend different quantile to choose.
 
 [St, threshold] = online_cp_detection(ref_x, data, window, q, quantile_num);
 
@@ -28,7 +28,6 @@ end
 
 
 plot(Dates,St)
-%line([datetime(2004,1,1) datetime(2024,12,31)],[threshold threshold],'linestyle','-', 'Color','k', 'LineWidth', 0.8);
 line([Dates(1) Dates(end)],[threshold threshold],'linestyle','-', 'Color','k', 'LineWidth', 0.8);
 
 
