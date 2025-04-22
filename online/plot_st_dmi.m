@@ -1,5 +1,3 @@
-S_signflip_1985_2024 = S_new_signflip(:,48*4+1:48*44);
-S_signflip_truncated = S_signflip_1985_2024(:,240+1:240+48);
 S_sign_1 = quantile(S_signflip_truncated(:),1)  
 S_sign_099 = quantile(S_signflip_truncated(:),0.99)  
 S_sign_098 = quantile(S_signflip_truncated(:),0.98)
@@ -94,8 +92,8 @@ ylabel('$|$DMI$|$($^\circ$C)','Interpreter','latex','fontsize',12,'Color',[sixte
 ylim([-0.8 1.5]); 
 
 ax = gca;
-ax.YAxis(1).Color = [0.91 0.15 0.1];  % ×ó²à y ÖáÑÕÉ«
-ax.YAxis(2).Color =[0 0 0];   % ÓÒ²à y ÖáÑÕÉ«
+ax.YAxis(1).Color = [0.91 0.15 0.1];  % Ã—Ã³Â²Ã  y Ã–Ã¡Ã‘Ã•Ã‰Â«
+ax.YAxis(2).Color =[0 0 0];   % Ã“Ã’Â²Ã  y Ã–Ã¡Ã‘Ã•Ã‰Â«
 
 for i = find(valid_segments)
     idx_range = start_idx(i):end_idx(i);
@@ -164,6 +162,6 @@ for i = find(valid_segments_lower)
 end
 
 ax = gca;
-ax.YAxis(1).Color = [0.91 0.15 0.1];  % ×ó²à y ÖáÑÕÉ«
-ax.YAxis(2).Color =[0 0 0];   % ÓÒ²à y ÖáÑÕÉ«
+ax.YAxis(1).Color = [0.91 0.15 0.1];  % Ã—Ã³Â²Ã  y Ã–Ã¡Ã‘Ã•Ã‰Â«
+ax.YAxis(2).Color =[0 0 0];   % Ã“Ã’Â²Ã  y Ã–Ã¡Ã‘Ã•Ã‰Â«
 
