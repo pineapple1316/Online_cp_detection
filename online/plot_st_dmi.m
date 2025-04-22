@@ -1,10 +1,11 @@
 load('result.mat');
-S_sign_1 = quantile(S_signflip_truncated(:),1)  
-S_sign_099 = quantile(S_signflip_truncated(:),0.99)  
-S_sign_098 = quantile(S_signflip_truncated(:),0.98)
-S_sign_097 = quantile(S_signflip_truncated(:),0.97)  
-S_sign_096 = quantile(S_signflip_truncated(:),0.96)  
-S_sign_095 = quantile(S_signflip_truncated(:),0.95)  
+
+S_sign_098_all = zeros(1,40);
+for i=1:40
+    S_signflip_truncated = S_signflip_1985_2024(:,48*(i-1)+1:48*(i-1)+48);
+    S_sign_098_all(i) = quantile(S_signflip_truncated(:),0.98);
+end
+S_sign_098 = mean(S_sign_098_all); 
 
 
 for year = 1985:2024
