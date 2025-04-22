@@ -1,3 +1,4 @@
+load('result.mat');
 S_sign_1 = quantile(S_signflip_truncated(:),1)  
 S_sign_099 = quantile(S_signflip_truncated(:),0.99)  
 S_sign_098 = quantile(S_signflip_truncated(:),0.98)
