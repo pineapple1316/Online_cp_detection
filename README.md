@@ -1,21 +1,19 @@
 # Online_cp_detection
 online change point detection in large dimensional correlation matrix
 
-
-The '3m_dmi_JAM_1985_2024.csv' is the three month running average of DMI index from JAMSTEC institute from year 1985 to 2024.
-
-'weekly_tem_data_1980_2024.mat' is the 1980-2024 1000hPa daily data(at time 00:00) on the 7th,14th,21st and 28th days of each month from ERA5 reanalysis in the IOD region, when grid size is 2.5*2.5, there's 261 nodes in total. 
-
-'result.mat' is the result when we use q=500 signflip times, max statisitc and 261nodes.
-
-'main.m' gives you a whole picture of how to use the function to detect change points sequentially in a real dataset.
-
-'plot_st_dmi' is the final plot code.
-
-'CCD.m' is a function file to calculate test statistics and thresholds.
-
-'sixteen2ten.m' is used for plot, 'vecho.m' and 'vk00.m' are functions used in 'online_cp_detection.m'.
-
-
-Note:
-We recommend using different quantiles of signflipped statistics as thrseholds, a prefered one is chosen by cross validation.
+We consider the problem of detecting change points in the correlation structure of 10
+streaming data under minimum assumptions on the underlying data distribution. 11
+Detection statistics are constructed for dense and sparse change settings, based on 12
+ℓ1 and ℓ∞ norms, respectively, of the squared difference between vectorized pre- 13
+and post-change correlation matrices. We also propose a novel threshold-selection 14
+algorithm based on sign-flip permutations, which enhances the efficiency of our pro- 15
+cedure, particularly when the data dimension is large compared to the window size. 16
+Theoretical guarantees for the proposed methods are provided in terms of the av- 17
+erage run length in the no-change regime and the expected detection delay in the 18
+post-change regime. We evaluate the performance of the proposed methods across a 19
+wide range of simulated datasets and demonstrate their effectiveness, achieving small 20
+detection delays comparable to those of the exact optimal CUSUM test. Finally, we 21
+demonstrate the effectiveness of our methods on real-world datasets, including El 22
+Ni˜no event forecasting and seismic event detection. For El Ni˜no event forecasting, 23
+our method achieves a state-of-the-art hit rate exceeding 0.86 with near-zero false 24
+alarms.
