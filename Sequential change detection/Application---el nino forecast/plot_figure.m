@@ -1,3 +1,4 @@
+load('result.mat')
 %1974-2024
 %begining each el nino event happens last month in 3 consequtive months
 plot(Dates,S_new1,'Color',[sixteen2ten('#0072BD')]/255, 'LineWidth', 1.3)
