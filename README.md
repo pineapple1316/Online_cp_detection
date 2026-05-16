@@ -6,6 +6,11 @@ This repository contains two main works. The first is a methodological study tha
 We consider the problem of detecting change points in the correlation structure of streaming data under minimum assumptions on the underlying data distribution. 
 Detection statistics are constructed for dense and sparse change settings, based on ℓ1 and ℓ∞ norms, respectively, of the squared difference between vectorized pre- and post-change correlation matrices. We also propose a novel threshold-selection algorithm based on sign-flip permutations, which enhances the efficiency of our procedure, particularly when the data dimension is large compared to the window size. Theoretical guarantees for the proposed methods are provided in terms of the average run length in the no-change regime and the expected detection delay in the post-change regime. We evaluate the performance of the proposed methods across a wide range of simulated datasets and demonstrate their effectiveness, achieving small detection delays comparable to those of the exact optimal CUSUM test. Finally, we demonstrate the effectiveness of our methods on real-world datasets, including El Ni˜no event forecasting and seismic event detection. For El Ni˜no event forecasting, our method achieves a state-of-the-art hit rate exceeding 0.86 with near-zero false alarms.
 
+## Problem setup
+We assume the following data-generating model:
+<img width="299" height="56" alt="image" src="https://github.com/user-attachments/assets/3103a66e-3128-4851-9414-701133972605" />
+Here, $\nu$ is the change point at which the correlation structure of xt changes. We assume that the observations are i.i.d. both before and after the change point. The matrices R0 = [ρ0(i, j)]i,j=1,...,p and R1 = [ρ1(i, j)]i,j=1,...,p are the pre- and post-change correlation matrices, respectively. Both R0 and R1 are unknown, and the change point $\nu$ is deterministic and unknown. The difference between R0 and R1 characterizes the magnitude and pattern of the change.
+
 ## Simulation
 Here we compare our WL-Sum statistic, SMOTE and knockoff enhancement methods, Scan B-statistic and CUSUM method.
 <img width="355" height="276" alt="image" src="https://github.com/user-attachments/assets/88a376b5-c887-4d73-8156-6058aa58b3c8" />
