@@ -39,3 +39,9 @@ method can predict the onset of a new La Nina episode 1 year ahead with a precis
 than the empirical rule of predicting a La Nina event directly after an El Ni ˜ no event. Overall, ˜
 the proposed CCD method offers a new perspective for predicting and understanding regional and
 global climate phenomena.
+
+The result for IOD forecasting. According to the JAMSTEC DMI index, of the total of 15 IOD events from 1986 to 2024, 243
+10 IOD events (5 positive IODs and 5 negative IODs) occurred the following year after a significant 244
+CCD appeared, which corresponds to a hit rate of 66.7%.
+<img width="374" height="289" alt="image" src="https://github.com/user-attachments/assets/db9a8d91-e2db-4f22-a102-ad2791622fa7" />
+
