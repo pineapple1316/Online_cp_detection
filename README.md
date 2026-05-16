@@ -1,4 +1,4 @@
-# Online change point detection
+<img width="647" height="347" alt="image" src="https://github.com/user-attachments/assets/8831c256-1f5c-47e4-b4bf-3cfc990da089" /># Online change point detection
 This repository contains two main works. The first is a methodological study that introduces window-limited statistics for sequential change detection in correlation matrices. The second is an application study that applies the Shewhart-type max statistic to the forecasting of two important climate events: the Indian Ocean Dipole (IOD) and La Niña.
 
 # Part 1: Sequential Change Detection in Correlation Structures with Window-Limited Statistics
@@ -43,5 +43,8 @@ global climate phenomena.
 The result for IOD forecasting. According to the JAMSTEC DMI index, of the total of 15 IOD events from 1986 to 2024, 243
 10 IOD events (5 positive IODs and 5 negative IODs) occurred the following year after a significant 244
 CCD appeared, which corresponds to a hit rate of 66.7%.
-<img width="374" height="289" alt="image" src="https://github.com/user-attachments/assets/db9a8d91-e2db-4f22-a102-ad2791622fa7" />
+<img width="647" height="347" alt="image" src="https://github.com/user-attachments/assets/12582e5f-9798-49bf-b370-9fbd129db24d" />
+<img width="720" height="196" alt="image" src="https://github.com/user-attachments/assets/51a2bcfe-facd-4abe-a808-45eb0d8c3d30" />
+
+
 
