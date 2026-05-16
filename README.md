@@ -24,7 +24,7 @@ events from 1974 to 2024. The horizontal green line represents the threshold, de
 <img width="713" height="356" alt="image" src="https://github.com/user-attachments/assets/9fd6ad0f-5623-4e75-bad7-306314a993f2" />
 
 
-# References
+## References
 If you find the code useful for your research, please consider citing
 ```bibtex
 @misc{gao2026sequentialchangedetectioncorrelation,
