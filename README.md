@@ -1,10 +1,14 @@
-<img width="647" height="347" alt="image" src="https://github.com/user-attachments/assets/8831c256-1f5c-47e4-b4bf-3cfc990da089" /># Online change point detection
+# Online change point detection
 This repository contains two main works. The first is a methodological study that introduces window-limited statistics for sequential change detection in correlation matrices. The second is an application study that applies the Shewhart-type max statistic to the forecasting of two important climate events: the Indian Ocean Dipole (IOD) and La Niña.
 
 # Part 1: Sequential Change Detection in Correlation Structures with Window-Limited Statistics
 
 We consider the problem of detecting change points in the correlation structure of streaming data under minimum assumptions on the underlying data distribution. 
 Detection statistics are constructed for dense and sparse change settings, based on ℓ1 and ℓ∞ norms, respectively, of the squared difference between vectorized pre- and post-change correlation matrices. We also propose a novel threshold-selection algorithm based on sign-flip permutations, which enhances the efficiency of our procedure, particularly when the data dimension is large compared to the window size. Theoretical guarantees for the proposed methods are provided in terms of the average run length in the no-change regime and the expected detection delay in the post-change regime. We evaluate the performance of the proposed methods across a wide range of simulated datasets and demonstrate their effectiveness, achieving small detection delays comparable to those of the exact optimal CUSUM test. Finally, we demonstrate the effectiveness of our methods on real-world datasets, including El Ni˜no event forecasting and seismic event detection. For El Ni˜no event forecasting, our method achieves a state-of-the-art hit rate exceeding 0.86 with near-zero false alarms.
+
+<img width="573" height="275" alt="image" src="https://github.com/user-attachments/assets/8ced3e0f-54f0-4c49-9bbe-ed3b190bf6ba" />
+
+<img width="713" height="356" alt="image" src="https://github.com/user-attachments/assets/9fd6ad0f-5623-4e75-bad7-306314a993f2" />
 
 
 # References
