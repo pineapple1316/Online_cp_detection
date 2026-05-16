@@ -12,6 +12,11 @@ We assume the following data-generating model:
 <img width="299" height="56" alt="image" src="https://github.com/user-attachments/assets/3103a66e-3128-4851-9414-701133972605" />
 Here, $\nu$ is the change point at which the correlation structure of xt changes. We assume that the observations are i.i.d. both before and after the change point. The matrices $R_0 = [\rho_0(i, j)]i,j=1,...,p$ and $R_1 = [\rho_1(i, j)]i,j=1,...,p$ are the pre- and post-change correlation matrices, respectively. Both $R_0$ and $R_1$ are unknown, and the change point $\nu$ is deterministic and unknown. The difference between $R_0$ and $R_1$ characterizes the magnitude and pattern of the change. The goal of online change point detection is to detect the change as quickly as possible after it occures, subject to the false alarm constrains.
 
+To properly estimate the pre- and post-change correlation matrices, we first denote the sliding window sample mean be <img width="162" height="26" alt="image" src="https://github.com/user-attachments/assets/28a8243a-e7ec-43f0-a467-f99888d52e3a" /> and sample covariance matrix be <img width="283" height="49" alt="image" src="https://github.com/user-attachments/assets/1306452d-6f1d-441a-9489-47729fe14765" />, which are calculated from a subset of data from time s to t. Then after standardizing the raw variables <img width="235" height="41" alt="image" src="https://github.com/user-attachments/assets/34655a3f-14e4-4056-880b-3b790e3269ec" />, the sliding window sample correlation matrix can be represented by <img width="157" height="53" alt="image" src="https://github.com/user-attachments/assets/8892db7b-e484-4eb6-be85-dcc293c1c035" />.
+
+
+
+
 A window-limited sum statistic is introduced as <img width="301" height="49" alt="image" src="https://github.com/user-attachments/assets/a492f260-c01b-490d-a930-4dfc4ced6993" /> to deal with dense change, and a max-type statistic <img width="305" height="52" alt="image" src="https://github.com/user-attachments/assets/4f9cf452-c43e-4041-8e46-0c0d3a2fcc18" /> is introduced for sparse change. The stopping time is defined as the infimum of t when the statistic cross the corresponding threshold b.
 
 
