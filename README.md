@@ -26,7 +26,7 @@ we propose a new prediction method based on the correlation structure of multipl
 series. The strength of the cross-correlations between climate variables or between different
 regions changes constantly, for instance, before and after some critical climate events. This forms
 the basis for prediction by the proposed Correlation Change Detection (CCD) method. We apply
-the method to forecast Indian Ocean Dipole (IOD) events and La Nina episodes and find that, ˜
+the method to forecast Indian Ocean Dipole (IOD) events and La Nina episodes and find that,
 for both phenomena, significant changes in the respective regional correlation structures tend to
 occur before their respective predictability barriers, which can be crossed by our proposed method.
 Based on this method, 10 out of the 15 IOD events between 1986 and 2024 are correctly predicted
