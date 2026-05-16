@@ -19,7 +19,7 @@ To properly estimate the pre- and post-change correlation matrices, we first den
 
 
 
-A window-limited sum statistic is introduced as <img width="301" height="49" alt="image" src="https://github.com/user-attachments/assets/a492f260-c01b-490d-a930-4dfc4ced6993" /> to deal with dense change, and a max-type statistic <img width="305" height="52" alt="image" src="https://github.com/user-attachments/assets/4f9cf452-c43e-4041-8e46-0c0d3a2fcc18" /> is introduced for sparse change. The stopping time is defined as the infimum of t when the statistic cross the corresponding threshold b.
+A window-limited sum statistic is introduced as <img width="301" height="49" alt="image" src="https://github.com/user-attachments/assets/a492f260-c01b-490d-a930-4dfc4ced6993" /> to deal with dense change, and a max-type statistic <img width="305" height="52" alt="image" src="https://github.com/user-attachments/assets/4f9cf452-c43e-4041-8e46-0c0d3a2fcc18" /> is introduced for sparse change. The weight is introduced to reduce the instability caused by imbalanced data. The stopping time is defined as the infimum of t when the statistic cross the corresponding threshold b.
 
 
 ## Simulation
