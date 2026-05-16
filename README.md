@@ -12,6 +12,9 @@ We assume the following data-generating model:
 <img width="299" height="56" alt="image" src="https://github.com/user-attachments/assets/3103a66e-3128-4851-9414-701133972605" />
 Here, $\nu$ is the change point at which the correlation structure of xt changes. We assume that the observations are i.i.d. both before and after the change point. The matrices $R_0 = [\rho_0(i, j)]i,j=1,...,p$ and $R_1 = [\rho_1(i, j)]i,j=1,...,p$ are the pre- and post-change correlation matrices, respectively. Both $R_0$ and $R_1$ are unknown, and the change point $\nu$ is deterministic and unknown. The difference between $R_0$ and $R_1$ characterizes the magnitude and pattern of the change. The goal of online change point detection is to detect the change as quickly as possible after it occures, subject to the false alarm constrains.
 
+A window-limited sum statistic is introduced as <img width="301" height="49" alt="image" src="https://github.com/user-attachments/assets/a492f260-c01b-490d-a930-4dfc4ced6993" /> to deal with dense change, and a max-type statistic <img width="305" height="52" alt="image" src="https://github.com/user-attachments/assets/4f9cf452-c43e-4041-8e46-0c0d3a2fcc18" /> is introduced for sparse change. The stopping time is defined as the infimum of t when the statistic cross the corresponding threshold b.
+
+
 ## Simulation
 Here we compare our WL-Sum statistic, SMOTE and knockoff enhancement methods, Scan B-statistic and CUSUM method.
 <img width="355" height="276" alt="image" src="https://github.com/user-attachments/assets/88a376b5-c887-4d73-8156-6058aa58b3c8" />
