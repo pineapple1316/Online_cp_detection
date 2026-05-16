@@ -1,2 +1,8 @@
 
 'p50_norm_r05.m' is the main file.
+‘canonicalSVD.m‘，’cvxBuild.m‘，’decompose.m‘，‘fixed_equi.m’, ‘solveEqui.m’ are used in knockoff enhancement method.
+‘bandw1.m’, ‘est_var_online.m’, ‘find_thre.m’, ‘fv.m’, ‘hxxyy.m’, ‘hyy.m’ are used in Scan B-statistic method.
+‘density_fun.m’ is used in CUSUM method.
+‘vecho.m’ is the vectorization operator, and ‘vk00.m’ is used when calculating the WL-Sum statistic.
+‘thresh_all.m’ and ‘thresh_cusum.m’ are used for threshold selection. Scan B statistic uses a theoretical threshold.
+‘delay_all_shared_path1.m‘ calculate delays for WL-Sum, WL-Sum+SMOTE, WL-Sum+knockoff, Scan B-statistic, CUSUM.
