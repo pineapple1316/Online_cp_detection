@@ -12,7 +12,7 @@ The '3m_dmi_JAM_1985_2024.csv' is the three month running average of DMI index f
 
 'plot_st_dmi' is the final plot code.
 
-'CCD.m' is a function file to calculate test statistics and thresholds.
+'online_cp_detection.m' is a function file to calculate test statistics and thresholds.
 
 'sixteen2ten.m' is used for plot, 'vecho.m' and 'vk00.m' are functions used in 'online_cp_detection.m'.
 
