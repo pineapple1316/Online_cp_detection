@@ -1,4 +1,6 @@
 # Online_cp_detection
+This repository contains two main works. The first is a methodological study that introduces window-limited statistics for sequential change detection in correlation matrices. The second is an application study that applies the Shewhart-type max statistic to the forecasting of two important climate events: the Indian Ocean Dipole (IOD) and La Niña.
+
 # Part 1: Sequential Change Detection in Correlation Structures with Window-Limited Statistics
 
 We consider the problem of detecting change points in the correlation structure of streaming data under minimum assumptions on the underlying data distribution. 
