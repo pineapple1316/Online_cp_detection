@@ -9,7 +9,7 @@ Detection statistics are constructed for dense and sparse change settings, based
 ## Problem setup
 We assume the following data-generating model:
 <img width="299" height="56" alt="image" src="https://github.com/user-attachments/assets/3103a66e-3128-4851-9414-701133972605" />
-Here, $\nu$ is the change point at which the correlation structure of xt changes. We assume that the observations are i.i.d. both before and after the change point. The matrices R0 = [ρ0(i, j)]i,j=1,...,p and R1 = [ρ1(i, j)]i,j=1,...,p are the pre- and post-change correlation matrices, respectively. Both R0 and R1 are unknown, and the change point $\nu$ is deterministic and unknown. The difference between R0 and R1 characterizes the magnitude and pattern of the change.
+Here, $\nu$ is the change point at which the correlation structure of xt changes. We assume that the observations are i.i.d. both before and after the change point. The matrices $R_0 = [\rho_0(i, j)]i,j=1,...,p$ and $R_1 = [\rho_1(i, j)]i,j=1,...,p$ are the pre- and post-change correlation matrices, respectively. Both $R_0$ and $R_1$ are unknown, and the change point $\nu$ is deterministic and unknown. The difference between R0 and R1 characterizes the magnitude and pattern of the change.
 
 ## Simulation
 Here we compare our WL-Sum statistic, SMOTE and knockoff enhancement methods, Scan B-statistic and CUSUM method.
