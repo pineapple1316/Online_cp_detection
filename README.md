@@ -14,12 +14,12 @@ Here we compare our WL-Sum statistic, SMOTE and knockoff enhancement methods, Sc
 
 ## Real data application --- Forecast of El nino event.
 We use the 1000 hPa daily temperature data from the ERA5 database at 00:00 UTC on the 7th, 14th, 21st, and 28th days of each month from 1974 to 2024. The spatial
-domain covers 30oS-30oN and 120oE-75oW, including the ENSO basin (left figure). With a grid size of 7.5◦ × 7.5◦, the resulting network consists of 207 nodes (p = 207),
-and T = 2448 is the length of the time series. The result is shown in the right figure. The statistic is calculated using a one-year moving window (blue line). The yellow and green vertical lines mark the beginning and end of 15 El Ni˜no 
-events from 1974 to 2024. The horizontal green line represents the threshold, defined 
-as the maximum value of the empirical statistics obtained from q = 100 sign-flip permutations, which is selected by cross-validation over all empirical quantiles (actually,
-the prediction remains stable with respect to the choice of threshold, that is, similar quantiles of empirical statistics lead to similar results in hit rate and false alarm rate). An alarm indicating the onset of an El Ni˜no event is triggered whenever the test statistic cross the threshold from above. The alarm results in a correct prediction if an El Ni˜no episode sets in within the next two years,; otherwise, it is considered a false alarm. The correct predictions are marked with red arrows. From 1974 to 2024, there were 15 El Ni˜no events and 36 event-free years. Our method successfully predicts 13 El Ni˜no events, resulting in a hit rate of 13/15 = 0.867 and a false alarm rate of 0.
+domain covers 30oS-30oN and 120oE-75oW, including the ENSO basin. With a grid size of 7.5◦ × 7.5◦, the resulting network consists of 207 nodes (p = 207),
+and T = 2448 is the length of the time series.
 <img width="713" height="356" alt="image" src="https://github.com/user-attachments/assets/8ced3e0f-54f0-4c49-9bbe-ed3b190bf6ba" />
+
+The result is shown in the figure below. The statistic is calculated using a one-year moving window (blue line). The yellow and green vertical lines mark the beginning and end of 15 El Ni˜no 
+events from 1974 to 2024. The horizontal green line represents the threshold, defined as the maximum value of the empirical statistics obtained from q = 100 sign-flip permutations, which is selected by cross-validation over all empirical quantiles (actually, the prediction remains stable with respect to the choice of threshold, that is, similar quantiles of empirical statistics lead to similar results in hit rate and false alarm rate). An alarm indicating the onset of an El Ni˜no event is triggered whenever the test statistic cross the threshold from above. The alarm results in a correct prediction if an El Ni˜no episode sets in within the next two years,; otherwise, it is considered a false alarm. The correct predictions are marked with red arrows. From 1974 to 2024, there were 15 El Ni˜no events and 36 event-free years. Our method successfully predicts 13 El Ni˜no events, resulting in a hit rate of 13/15 = 0.867 and a false alarm rate of 0.
 
 <img width="713" height="356" alt="image" src="https://github.com/user-attachments/assets/9fd6ad0f-5623-4e75-bad7-306314a993f2" />
 
