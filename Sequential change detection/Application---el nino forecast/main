@@ -4,9 +4,9 @@ load("X_1950_2024_week_207nodes.mat");
 data1 = X_num;
 data1 = data1.';
 data = data1; %p=207
-data = data(:,1105:end);%1973-2024 £¨since we use ST-Sum,actual data we use is 1974-2024)
+data = data(:,1105:end);%1973-2024 ï¼ˆsince we use ST-Sum,actual data we use is 1974-2024)
 
-%½¨Á¢8*8µÄsubmatrix,¹²32¸ö¡£
+%å»ºç«‹8*8çš„submatrix,å…±32ä¸ªã€‚
 set = zeros(2*16,64);
 for i = 1:2
     for j = 1:16
@@ -45,7 +45,7 @@ for refi = 1:32
 end
 
 
-S_new = zeros(32,T); %×îÖÕÈ¡µÄÍ³¼ÆÁ¿ÎªÃ¿¸öÊ±¿ÌÏÂ32¸ösumÍ³¼ÆÁ¿µÄ×î´óÖµ
+S_new = zeros(32,T); %æœ€ç»ˆå–çš„ç»Ÿè®¡é‡ä¸ºæ¯ä¸ªæ—¶åˆ»ä¸‹32ä¸ªsumç»Ÿè®¡é‡çš„æœ€å¤§å€¼
 for j = 1:T
     j;
     x0 = data(:,j:j+window-1);
@@ -85,7 +85,7 @@ S_new1_signflip = zeros(q,T);
 
 for sign = 1:q
     sign
-    S_new_signflip = zeros(32,T); %×îÖÕÈ¡µÄÍ³¼ÆÁ¿ÎªÃ¿¸öÊ±¿ÌÏÂ32¸ösumÍ³¼ÆÁ¿µÄ×î´óÖµ
+    S_new_signflip = zeros(32,T); %æœ€ç»ˆå–çš„ç»Ÿè®¡é‡ä¸ºæ¯ä¸ªæ—¶åˆ»ä¸‹32ä¸ªsumç»Ÿè®¡é‡çš„æœ€å¤§å€¼
     data_star=(binornd(1,0.5,p,(T+window))*2-1).*data; 
     ref_x_sign =(binornd(1,0.5,p,T_ref)*2-1).*ref_x; 
 
