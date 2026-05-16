@@ -1,0 +1,155 @@
+clear all;   
+time=clock;
+load("X_1950_2024_week_207nodes.mat");
+data1 = X_num;
+data1 = data1.';
+data = data1; %p=207
+data = data(:,1105:end);%1973-2024 （since we use ST-Sum,actual data we use is 1974-2024)
+
+%建立8*8的submatrix,共32个。
+set = zeros(2*16,64);
+for i = 1:2
+    for j = 1:16
+        set((i-1)*16+j,:) = [(i-1)*23+j:(i-1)*23+j+7,i*23+j:i*23+j+7, (i+1)*23+j:(i+1)*23+j+7,(i+2)*23+j:(i+2)*23+j+7,(i+3)*23+j:(i+3)*23+j+7,(i+4)*23+j:(i+4)*23+j+7,(i+5)*23+j:(i+5)*23+j+7,(i+6)*23+j:(i+6)*23+j+7];
+    end
+end
+
+
+window=48; %48 weeks one year
+[p,~] = size(data);
+T = (2024-1974+1)*48;
+p1 = p*(p-1)/2;
+%select threshold
+ref_x = data1(:,[1009:1008+window,1153:1152+window]) %1971.1.7-1971.12.28 and 1974.1.7-1974.12.28
+[~,T_ref] = size(ref_x);
+
+p_sub = 64;
+p_sub1 = p_sub * (p_sub - 1)/2;
+vecho_matrix1 = zeros(p_sub1,32);
+for refi = 1:32
+    submatrix = ref_x(set(refi,:),:); 
+    [p_sub,T_sub] = size(submatrix);
+  
+    submatrix_mean=mean(submatrix,2);
+    submatrix_sd=std(submatrix,0,2);
+    submatrix_dot=zeros(p_sub,T_sub);
+    for ip=1:p_sub
+           submatrix_dot(ip,:)=(submatrix(ip,:)-submatrix_mean(ip))/submatrix_sd(ip);
+    end
+
+    for it=1:T_sub
+          vecho_matrix1(:,refi) = vecho_matrix1(:,refi) + vecho( submatrix_dot(:,it)* submatrix_dot(:,it)');
+    end
+    vecho_matrix1(:,refi) = vecho_matrix1(:,refi)/T_sub;
+
+end
+
+
+S_new = zeros(32,T); %最终取的统计量为每个时刻下32个sum统计量的最大值
+for j = 1:T
+    j;
+    x0 = data(:,j:j+window-1);
+    
+    vecho_matrix2 = zeros(p_sub1,32);
+    for newi = 1:32
+        submatrix_new = x0(set(newi,:),:); 
+        [p_sub_new,T_sub_new] = size(submatrix_new);
+
+        submatrix_new_mean=mean(submatrix_new,2);
+        submatrix_new_sd=std(submatrix_new,0,2);
+        submatrix_new_dot=zeros(p_sub_new,T_sub_new);
+        
+        for ip=1:p_sub_new
+               submatrix_new_dot(ip,:)=(submatrix_new(ip,:)-submatrix_new_mean(ip))/submatrix_new_sd(ip);
+        end
+
+        for it=1:T_sub_new
+              vecho_matrix2(:,newi) = vecho_matrix2(:,newi) + vecho( submatrix_new_dot(:,it)* submatrix_new_dot(:,it)');
+        end
+        vecho_matrix2(:,newi) = vecho_matrix2(:,newi)/T_sub_new;
+
+    end
+    
+    for is = 1:32
+       S_new(is,j) = norm(vecho_matrix1(:,is) - vecho_matrix2(:,is),2)^2;
+    end 
+   
+      
+end
+
+S_new1 = max(S_new);
+
+%signflip select threshold----------------------------------------------------------------------
+q = 100;
+S_new1_signflip = zeros(q,T);
+
+for sign = 1:q
+    sign
+    S_new_signflip = zeros(32,T); %最终取的统计量为每个时刻下32个sum统计量的最大值
+    data_star=(binornd(1,0.5,p,(T+window))*2-1).*data; 
+    ref_x_sign =(binornd(1,0.5,p,T_ref)*2-1).*ref_x; 
+
+    p_sub = 64;
+    p_sub1 = p_sub * (p_sub - 1)/2;
+    vecho_matrix1_sign = zeros(p_sub1,32);
+    for refi = 1:32
+        submatrix = ref_x_sign(set(refi,:),:); 
+        [p_sub,T_sub] = size(submatrix);
+
+        submatrix_mean=mean(submatrix,2);
+        submatrix_sd=std(submatrix,0,2);
+        submatrix_dot=zeros(p_sub,T_sub);
+        for ip=1:p_sub
+               submatrix_dot(ip,:)=(submatrix(ip,:)-submatrix_mean(ip))/submatrix_sd(ip);
+        end
+
+        for it=1:T_sub
+              vecho_matrix1_sign(:,refi) = vecho_matrix1_sign(:,refi) + vecho( submatrix_dot(:,it)* submatrix_dot(:,it)');
+        end
+        vecho_matrix1_sign(:,refi) = vecho_matrix1_sign(:,refi)/T_sub;
+
+    end
+
+    for j = 1:T
+        j ; 
+        x0 = data_star(:,j:j+window-1);
+
+        vecho_matrix2_sign = zeros(p_sub1,32);
+        for newi = 1:32
+            submatrix_new = x0(set(newi,:),:); 
+            [p_sub_new,T_sub_new] = size(submatrix_new);
+
+            submatrix_new_mean=mean(submatrix_new,2);
+            submatrix_new_sd=std(submatrix_new,0,2);
+            submatrix_new_dot=zeros(p_sub_new,T_sub_new);
+
+            for ip=1:p_sub_new
+                   submatrix_new_dot(ip,:)=(submatrix_new(ip,:)-submatrix_new_mean(ip))/submatrix_new_sd(ip);
+            end
+
+            for it=1:T_sub_new
+                  vecho_matrix2_sign(:,newi) = vecho_matrix2_sign(:,newi) + vecho( submatrix_new_dot(:,it)* submatrix_new_dot(:,it)');
+            end
+            vecho_matrix2_sign(:,newi) = vecho_matrix2_sign(:,newi)/T_sub_new;
+
+        end
+
+        for is = 1:32
+           S_new_signflip(is,j) = norm(vecho_matrix1_sign(:,is) - vecho_matrix2_sign(:,is),2)^2;
+        end 
+
+    end
+    S_new1_signflip(sign,:) = max(S_new_signflip);
+end
+S_sign = max(max(S_new1_signflip));
+
+for year = 1974:2024
+      for mon = 1:12
+        t1 = datetime(year,mon,7);
+        t2 = datetime(year,mon,29);
+        t = t1:caldays(7):t2;
+        Dates((year-1974)*48+(mon-1)*4+1:(year-1974)*48+(mon-1)*4+4) = t;
+      end
+end
+save 'ref71-72 74-75 1974-2024el nino.mat' Dates S_new1 S_sign S_new1_signflip
+
