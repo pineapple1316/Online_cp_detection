@@ -151,5 +151,5 @@ for year = 1974:2024
         Dates((year-1974)*48+(mon-1)*4+1:(year-1974)*48+(mon-1)*4+4) = t;
       end
 end
-save 'ref71-72 74-75 1974-2024el nino.mat' Dates S_new1 S_sign S_new1_signflip
+save 'result.mat' Dates S_new1 S_sign S_new1_signflip
 
